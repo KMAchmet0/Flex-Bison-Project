@@ -1,0 +1,17 @@
+
+
+/* 
+	This is 
+	a multiple comment
+*/
+
+public class A {
+	int var1 = 10;
+	private double var2;	// This is a single comment
+	double x = 0;
+
+	public void method1() {
+		out.println("H3ll0 W0rld!");
+		out.println("H3ll0 ...");
+	}
+}

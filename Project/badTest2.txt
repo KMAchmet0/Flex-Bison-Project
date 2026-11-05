@@ -1,0 +1,20 @@
+
+public class A_a2 {
+	int x = 100;
+	private double y = 0;
+	boolean isOk = false;
+	private String myString = "Hi";
+	public char letter = 'O';
+
+	public int method1() {
+		x = 55;
+		isOk = true;
+		myString = "Hello World";
+		letter = 'k';
+
+		out.println("Number Variables: ", x, y);
+		out.println("Char Variables: ", letter, myString);
+		
+		return (x * 23);
+	}
+}

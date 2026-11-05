@@ -1,0 +1,11 @@
+
+public class TestClass {
+    int number = 10;
+    String text = "Hello";
+    boolean flag = true;
+    
+    public String faultyMethod() {
+          return "This method has no errors!"
+    }
+ }
+ls

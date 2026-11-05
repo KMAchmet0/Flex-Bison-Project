@@ -1,0 +1,12 @@
+
+public class A {
+	
+	int var1 = 10;
+	private  myString; 
+	double x = 0;
+
+	public void method1() {
+		out.println("H3ll0 W0rld!");
+		out.println("H3ll0 ...");
+	}
+}

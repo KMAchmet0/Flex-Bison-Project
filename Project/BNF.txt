@@ -1,0 +1,86 @@
+
+	<input> ::= <class>+ | ''
+
+	<class> ::= 'public' 'class' <class-name> '{' <variable>* <method>* '}'
+
+	<variable> ::= <modifier>? <data-type> <multiple-variables> ';'
+	
+	<multiple-variables> ::= <simple-variable> (',' <simple-variable>)*
+	
+	<simple-variable> ::= <identifier> ('=' <expression>)?
+
+	<method> ::= <modifier>? <return-value> <identifier> '(' <parameters>? ')' '{' <variable>* <command>+ '}'
+
+	<parameters> ::= <parameter> (',' <parameter>)*
+
+	<parameter> ::= <data-type> <identifier>
+
+	<command> ::= <assignment> ';' | <create-object> | <loop> | <control> | <print> | <return> | <end-loop> | <method-call> ';'
+
+	<assignment> ::= <use-member> '=' <expression>
+	
+	<create-object> ::= <class-name> <identifier> '=' <new-object> ';'
+	
+	<loop> ::= <do-loop> | <for-loop>
+	
+	<control> ::= <if-control> | <switch-control>
+
+	<do-loop> ::= 'do' <command-block> 'while' <condition> ';'
+
+	<for-loop> ::= 'for' '(' <assignment> ';' <condition> ';' <assignment> ')' <command-block>
+
+	<if-control> ::= 'if' <condition> <command-block> ('else' 'if' <condition> <command-block>)* ('else' <command-block>)?
+
+	<switch-control> ::= 'switch' '(' <expression> ')' '{' ('case' <expression> ':' <command>+)+ ('default' ':' <command>+)? '}'
+
+	<print> ::= <out-print> '(' <string-literal> (',' <use-member>)* ')' ';'
+
+	<return> ::= 'return' <expression>? ';'
+
+	<end-loop> ::= 'break' ';'
+	
+	<command-block> ::= '{' <command>+ '}'
+
+	<condition> ::= '(' <condition> ')' | <expression> <relational-operator> <expression> | <condition> <logical-operator> <condition>
+
+	<expression> ::= '(' <expression> ')' | <arithmetic-operation> | <literals> | <use-member> | <method-call> | <new-object>
+
+	<arithmetic-operation> ::= <expression> <arithmetic-operator> <expression> | '-' <expression>
+
+	<literals> ::= <int-literal> | <char-literal> | <boolean-literal> | <double-literal> | <string-literal>
+
+	<use-member> ::= (<identifier> '.')? <identifier>
+
+	<method-call> ::= <use-member> '(' <arguments>? ')'
+
+	<arguments> ::= <expression> (',' <expression>)*
+
+	<new-object> ::= 'new' <class-name> '(' ')'
+
+	<modifier> ::= 'public' | 'private'
+
+	<out-print> ::= 'out' '.' ('print' | 'println')
+
+	<data-type> ::= 'int' | 'char' | 'double' | 'boolean' | 'String'
+	
+	<return-value> ::= 'void' | <data-type>
+	
+	<relational-operator> ::= '>' | '<' | '==' | '!='
+	
+	<logical-operator> ::= '&&' | '||'
+	
+	<arithmetic-operator> ::= '+' | '-' | '*' | '/'
+
+	<class-name> ::= [A-Z][a-zA-Z0-9_]*
+
+	<identifier> ::= [a-zA-Z_][a-zA-Z0-9_]*
+	
+	<int-literal> ::= [0-9]+
+	
+	<char-literal> ::= ''' char '''
+	
+	<boolean-literal> ::= 'true' | 'false'
+	
+	<double-literal> ::= <int-literal>? ('.' <digit>)? (('e' | 'E') ('+' | '-')? <int-literal>)? 'd'
+	
+	<string-literal> ::= '"' char* '"'
